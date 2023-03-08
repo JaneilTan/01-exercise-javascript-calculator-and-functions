@@ -15,7 +15,7 @@ const calculator = {
   operator: null,
 };
 
-function inputDigit(digit) {
+const inputDigit = (digit) => {
   const { displayValue, waitingForSecondOperand } = calculator;
 
   if (waitingForSecondOperand === true) {
@@ -27,7 +27,7 @@ function inputDigit(digit) {
   }
 }
 
-function inputDecimal(dot) {
+const inputDecimal = (dot) => {
   if (calculator.waitingForSecondOperand === true) {
     calculator.displayValue = "0.";
     calculator.waitingForSecondOperand = false;
@@ -39,7 +39,7 @@ function inputDecimal(dot) {
   }
 }
 
-function handleOperator(nextOperator) {
+const handleOperator = (nextOperator) => {
   const { firstOperand, displayValue, operator } = calculator;
   const inputValue = parseFloat(displayValue);
 
@@ -61,7 +61,7 @@ function handleOperator(nextOperator) {
   calculator.operator = nextOperator;
 }
 
-function calculate(firstOperand, secondOperand, operator) {
+const calculate = (firstOperand, secondOperand, operator) => {
   if (operator === "+") {
     if (typeof add === "undefined") {
       throw new Error("add function is not declared");
@@ -87,14 +87,14 @@ function calculate(firstOperand, secondOperand, operator) {
   return secondOperand;
 }
 
-function resetCalculator() {
+const resetCalculator = () => {
   calculator.displayValue = "0";
   calculator.firstOperand = null;
   calculator.waitingForSecondOperand = false;
   calculator.operator = null;
 }
 
-function updateDisplay() {
+const updateDisplay = () => {
   const display = document.querySelector(".calculator-screen");
   display.value = calculator.displayValue;
 }
