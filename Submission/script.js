@@ -1,6 +1,9 @@
 /**
  * PART B: Create the add, subtract, multiply and divide functions below
  */
+const add = (num1, num2) => {
+  return num1 + num2;
+}
 
 /**
  * PART A: Convert all the following functions to use arrow functions
