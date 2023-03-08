@@ -10,7 +10,9 @@ const subtract = (num1, num2) => {
 const multiply = (num1, num2) => {
   return num1 * num2;
 }
-
+const divide = (num1, num2) => {
+  return num1 / num2;
+}
 /**
  * PART A: Convert all the following functions to use arrow functions
  * Note: The following calculator is taken from this tutorial:
